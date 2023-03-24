@@ -21,13 +21,6 @@ ps to see running processes
 (StableDif2) [padamatinti.s@c1107a-s35 finetune-sd]$ ps
    PID TTY          TIME CMD
  12661 pts/0    00:00:01 python3.10
- 12725 pts/0    00:00:00 python3.10
- 12790 pts/0    00:00:00 python3.10
- 12855 pts/0    00:00:00 python3.10
- 12932 pts/0    00:00:00 ps
-105530 pts/0    00:00:01 accelerate
-105579 pts/0    00:04:13 python3.10
-110697 pts/0    00:00:00 bash
 
 
 https://help.rc.ufl.edu/doc/Checking_and_Using_Secondary_Resources
@@ -41,22 +34,20 @@ $ showQos <specified_qos>
 
 	to get the Qos group limits.
 
-[padamatinti.s@login5 finetune-sd]$ showAssoc padamatinti.s
+[finetune-sd]$ showAssoc <username>
 User               Account        Def Acct       Def QOS        QOS
 ------------------ -------------- -------------- -------------- ----------------------------------------
-padamatinti.s      subramanianh   subramanianh   subramanianh   subramanianh,subramanianh-b
 
-[padamatinti.s@login5 finetune-sd]$ showQos subramanianh
+
+[@login5 finetune-sd]$ showQos <QOS name>
 Name                 Descr                          GrpTRES                                        GrpCPUs
 -------------------- ------------------------------ --------------------------------------------- --------
-subramanianh         subramanianh qos               cpu=4,gres/gpu=1,mem=32000M                          4
 
 
 
-[padamatinti.s@login6 ~]$ showQos subramanianh-b
+[padamatinti.s@login6 ~]$ showQos <QOS name -b>
 Name                 Descr                          GrpTRES                                        GrpCPUs
 -------------------- ------------------------------ --------------------------------------------- --------
-subramanianh-b       subramanianh burst qos         cpu=36,gres/gpu=0,mem=288000M                       36
 
 
 Instructions as per https://github.com/harrywang/finetune-sd#setup
